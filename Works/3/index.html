@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Задание 3</title>
+</head>
+<body>
+  <div id="app">
+    <h2>Шифрование и дешифрование</h2>
+    <div style="font-size: 12px; color: gray; margin-bottom: 10px;">
+    Метод шифрования: Перестановка
+    </div>
+    <div class="key-box">
+      <label for="key">Ключ: </label><input id="key" type="text">
+    </div>
+    <table>
+      <tbody>
+        <tr>
+          <td><textarea id="input_text" cols="30" rows="10"></textarea></td>
+          <td>&lt;=&gt;</td>
+          <td><textarea id="output_text" cols="30" rows="10"></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <div class="error" id="error" >Ошибка</div>
+          </td>
+        </tr>
+        <tr>
+          <td><button style="width: 100%;" onclick="btn_encode()">Зашифровать</button></td>
+          <td></td>
+          <td><button style="width: 100%;" onclick="btn_decode()">Дешифровать</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<script src="script.js"></script>
+<style>
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.error{
+  display: none;
+  padding: 3px;
+  margin-bottom: 6px;
+  background-color: rgb(255, 203, 203);
+  border-radius: 6px;
+  border: 1px solid rgb(255, 122, 122);
+}
+input[type='text'], textarea{
+  outline: none;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+input[type='text']:focus, textarea:focus{
+  outline: 2px solid rgb(159, 159, 247);
+}
+.error._visible{
+  display: block;
+}
+textarea{
+  resize: none;
+}
+.key-box{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 3px;
+  padding: 2px;
+}
+#app{
+  width: max-content;
+  margin: auto;
+}
+button{
+  outline: none;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid gray;
+  font-size: 16px;
+  padding: 6px;
+}
+button:hover{
+  outline: 2px solid rgb(159, 159, 247);
+}
+</style>
+</body>
+</html>
